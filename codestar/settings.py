@@ -90,13 +90,10 @@ WSGI_APPLICATION = 'codestar.wsgi.application'
 #        'NAME': BASE_DIR / 'db.sqlite3',
 #    }
 # }
-
 DATABASES = {
-    'default': dj_database_url.parse(
-        os.environ.get(
-            "DATABASE_URL",
-            "postgres://localhost:5432/codestar_db"
-        )
+    'default': dj_database_url.config(
+        default=os.environ.get('DATABASE_URL'),
+        conn_max_age=600
     )
 }
 
