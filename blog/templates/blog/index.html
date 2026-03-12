@@ -1,27 +1,43 @@
-<div class="row">
-    {% for post in post_list %}
-    <div class="col-md-4">
-        <div class="card mb-4">
-            <div class="card-body">
-                <div class="image-container">
-                    <div class="image-flash">
-                        <p class="author">Author: {{ post.author }}</p>
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mt-3 left">
+            <div class="row">
+                {% for post in post_list %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h2 class="card-title">{{ post.title }}</h2>
+                            <p class="card-text">{{ post.excerpt }}</p>
+                            <p class="author">Author: {{ post.author }}</p>
+                            <hr />
+                            <p class="card-text text-muted h6">{{ post.created_on }}</p>
+                        </div>
                     </div>
                 </div>
-                <a href="#" class="post-link">
-                    <h2 class="card-title">{{ post.title }}</h2>
-                </a>
-                <p class="card-text">{{ post.excerpt }}</p>
-                <hr />
-                <p class="card-text text-muted h6">{{ post.created_on }}</p>
+                {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row">
+                {% endif %}
+                {% empty %}
+                <div class="col-12">
+                    <h2 class="text-center text-danger">DEBUG: Django found 0 published posts in the database!</h2>
+                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
-    {% if forloop.counter|divisibleby:3 %}
 </div>
-<div class="row">
-    {% endif %}
-    {% empty %}
-    <h2 class="text-center text-danger">DEBUG: The post_list is empty! Check the Admin for Published posts.</h2>
-    {% endfor %}
-</div>
+{% endblock content %}
+Use code with caution.
+
+2. Check the base.html "Plug"
+Open your base.html and look for where you put the content block. It must look like this:
+html
+<main>
+    {% block content %}
+    <!-- This is where the index.html content will go -->
+    {% endblock content %}
+</main>
