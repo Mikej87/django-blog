@@ -35,12 +35,8 @@ SECRET_KEY = (
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [
-    'codestar-django1-74cc10c6cb03.herokuapp.com',
-    '.herokuapp.com',
-    '127.0.0.1',
-]
-
+ALLOWED_HOSTS = ['.herokuapp.com',
+                 '127.0.0.1',]
 
 # Application definition
 
@@ -99,7 +95,7 @@ WSGI_APPLICATION = 'codestar.wsgi.application'
 
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': dj_database_url.config(default=os.environ.get("DATABASE_URL"))
 }
 
 CSRF_TRUSTED_ORIGINS = [
