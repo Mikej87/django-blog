@@ -32,6 +32,9 @@
             </div>
             <div class="row">
                 {% endif %}
+                {% empty %}
+    <h2 class="text-center text-danger">The database is empty! Add a Published post in the Admin.</h2>
+{% endfor %}
                 {% endfor %}
 
             </div>
