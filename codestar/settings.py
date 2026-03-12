@@ -30,7 +30,7 @@ SECRET_KEY = (
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'codestar-django1-74cc10c6cb03.herokuapp.com',
