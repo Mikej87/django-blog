@@ -31,9 +31,10 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-default-key-here')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.environ.get('SECRET_KEY')
 
-ALLOWED_HOSTS = ['codestar-django1-74cc10c6cb03.herokuapp.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['codestar-django1-74cc10c6cb03.herokuapp.com', '127.0.0.1',
+                  'localhost']
 
 # Application definition
 
