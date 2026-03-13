@@ -23,7 +23,7 @@
                 {% endif %}
                 {% empty %}
                 <div class="col-12">
-                    <h2 class="text-center text-danger">DEBUG: Django found 0 published posts in the database!</h2>
+                    <h2 class="text-center text-danger">No published posts found in the database!</h2>
                 </div>
                 {% endfor %}
             </div>
@@ -31,9 +31,3 @@
     </div>
 </div>
 {% endblock content %}
-
-<main>
-    {% block content %}
-    <!-- This is where the index.html content will go -->
-    {% endblock content %}
-</main>
