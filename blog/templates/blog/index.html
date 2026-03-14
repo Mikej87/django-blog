@@ -9,8 +9,10 @@
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
+                            <a href="{% url 'post_detail' post.slug %}" class="post-link"></a>
                             <h2 class="card-title">{{ post.title }}</h2>
                             <p class="card-text">{{ post.excerpt }}</p>
+                            <div class="card-text">{{ post.content | safe }}</div>
                             <p class="author">Author: {{ post.author }}</p>
                             <hr />
                             <p class="card-text text-muted h6">{{ post.created_on }}</p>
