@@ -17,6 +17,15 @@ class PostAdmin(SummernoteModelAdmin):
 admin.site.register(Comment)
 
 
+
 class CommentAdmin(admin.ModelAdmin):
     # This creates the table columns you see in the list
     list_display = ('author', 'body', 'post', 'created_on', 'approved')
+
+
+class AboutAdmin(admin.ModelAdmin):
+    """
+    Displays the About model in the admin panel
+    and allows user to edit the content.
+    """
+    list_display = ('title', 'updated_on')

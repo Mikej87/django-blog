@@ -34,7 +34,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-default-key-here')
 DEBUG = False
 
 ALLOWED_HOSTS = ['codestar-django1-74cc10c6cb03.herokuapp.com', '127.0.0.1',
-                  'localhost']
+                'localhost']
 
 # Application definition
 
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_summernote',
     'blog.apps.BlogConfig',
+    'about',
 ]
 
 MIDDLEWARE = [

@@ -39,3 +39,14 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.author}"  
+    
+    class About(models.Model):
+        title = models.CharField(max_length=200)
+        updated_on = models.DateTimeField(auto_now=True)
+        content = models.TextField()
+    # If your ERD has an image attribute, ensure you have 'Pillow' installed
+        image = models.ImageField(upload_to='about/', blank=True, null=True) 
+        updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
