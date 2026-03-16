@@ -17,7 +17,6 @@ class PostAdmin(SummernoteModelAdmin):
 admin.site.register(Comment)
 
 
-
 class CommentAdmin(admin.ModelAdmin):
     # This creates the table columns you see in the list
     list_display = ('author', 'body', 'post', 'created_on', 'approved')
