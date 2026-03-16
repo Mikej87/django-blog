@@ -120,7 +120,11 @@
     <script>
         console.log("The CodeStar Blog is active!");
     </script>
-    <script src="{% static 'js/script.js' %}"></script>    
+    <script src="{% static 'js/script.js' %}"></script>   
+    
+      {% block extras %}
+    {% endblock %}
+    
 </body>
 
 </html>
