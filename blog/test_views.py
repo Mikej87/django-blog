@@ -4,6 +4,7 @@ from django.test import TestCase
 from .forms import CommentForm
 from .models import Post
 
+
 class TestBlogViews(TestCase):
 
     def setUp(self):
